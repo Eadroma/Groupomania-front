@@ -6,12 +6,19 @@ import styles from "./Profile.module.css";
 import { useEffect, useState } from "react";
 export default function Home() {
   const [data, setData] = useState({});
+  const [isLoading, setLoading] = useState(false)
+    let name;
   useEffect(async () => {
+    setLoading(true)
     let user = JSON.parse(localStorage.getItem("user"));
     const fetchData = await getDataAPI(user.id);
     setData(fetchData);
+    console.log(data.email);
+    await setLoading(false);
   }, []);
 
+  if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No profile data</p>
   return (
     <div className={styles.container} id="container">
       <HeaderModule title="Groupomania" description="None yet" />
@@ -37,7 +44,7 @@ export default function Home() {
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p class="title is-4 has-text-centered">{data.email.split("@")[0]}</p>
+                <p class="title is-4 has-text-centered">{name}</p>
                 <p class="subtitle is-6 has-text-centered">{data.email}</p>
               </div>
             </div>
