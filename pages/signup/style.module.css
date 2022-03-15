@@ -1,0 +1,17 @@
+.container {
+height: 100vh;
+}
+
+.navbar {
+    height: 5vh;
+}
+
+.formContainer {
+    width: 50%;
+    height: 40vh;
+    margin: 20vh auto;
+}
+
+.footer {
+    height: 10vh;
+}
