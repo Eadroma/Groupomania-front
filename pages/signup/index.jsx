@@ -40,7 +40,6 @@ export default function Signup() {
             const localUser = {
                 id: result.id,
                 token: result.token,
-                email: result.email,
             }
             if (addItemLocalStorage(localUser))
                 document.location.href="/"
