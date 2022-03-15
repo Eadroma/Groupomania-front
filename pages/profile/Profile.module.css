@@ -1,0 +1,18 @@
+  .mainLayout {
+    height: 75vh;
+  }
+
+  .mainTile {
+    text-align: center;
+  }
+
+.card {
+  height: 40vh;
+}
+
+.avatarImg {
+
+  position: absolute;
+  top: 23rem;
+  width: 33%;
+}
