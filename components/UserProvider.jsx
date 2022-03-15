@@ -11,6 +11,19 @@
     const readLocalStorage = async () => {
         return await localStorage.getItem('user') == null ? false : JSON.parse(localStorage.getItem('user'));
     };
-
+    const getDataAPI = async (id) => {
+        const apiUrl = `https://groupomania-myback.herokuapp.com/api/auth/${id}`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        };
+        const response = await fetch(apiUrl, options);
+        const result = await response.json();
+        console.log(result);
+        return result;
+    };
     module.exports.addItemLocalStorage = addItemLocalStorage;
     module.exports.readLocalStorage = readLocalStorage;
+    module.exports.getDataAPI = getDataAPI;
