@@ -10,14 +10,24 @@ export default function Home() {
     let name;
   useEffect(async () => {
     setLoading(true)
-    let user = JSON.parse(localStorage.getItem("user"));
+    const queryString = window.location.search;
+    const objectId = new URLSearchParams(queryString).get('id');
+    let user; 
+    if (!objectId)
+      user = JSON.parse(localStorage.getItem("user"));
+    else
+      user = await getDataAPI(objectId)
     const fetchData = await getDataAPI(user.id);
     setData(fetchData);
-    console.log(data.email);
     await setLoading(false);
   }, []);
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return (
+  <div className={styles.container} id="container">
+    <HeaderModule title="Groupomania" description="None yet"/>
+    <NavbarModule />
+    <p className={styles.loading}>Loading...</p>
+  </div>)
   if (!data) return <p>No profile data</p>
   return (
     <div className={styles.container} id="container">
