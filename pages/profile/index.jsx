@@ -52,7 +52,7 @@ export default function Home() {
           <img src="https://bulma.io/images/placeholders/128x128.png" />
         </p>
       </figure> */}
-            <div class=" card-content media-content">
+            <div class="card-content media-content">
               <div class="content">
                 <p>
                   <strong>{data.name}</strong> <small>{data.email}</small>

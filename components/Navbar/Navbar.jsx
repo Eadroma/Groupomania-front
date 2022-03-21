@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import Link from "next/link";
 import Image from "next/image";
 export const NavbarModule = () => {
@@ -90,13 +91,17 @@ export const NavbarModule = () => {
               </a>
             </Link>
             <Link href="/profile">
-              <a class="navbar-item" href="/profile">
+              <a class="navbar-item" onClick={() => {
+                const router = useRouter()
+                
+                router.reload(window.location.pathname)
+              }}>
                 Profile
               </a>
             </Link>
             <a class="navbar-item" href="/about">
               About
-            </a>  
+            </a>
           <div class="navbar-item field ml-7">
               <p class="control has-icons-right">
                 <input class="input" type="search" placeholder="Search..." />
