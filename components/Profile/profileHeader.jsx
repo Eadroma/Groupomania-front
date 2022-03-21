@@ -1,6 +1,6 @@
-import { NavbarModule } from "../../../components/Navbar/Navbar";
-import { HeaderModule } from "../../../components/Header";
-import styles from '../Profile.module.css'
+import { NavbarModule } from "../Navbar/Navbar"
+import { HeaderModule } from "../Header"
+import styles from '../../pages/profile/Profile.module.css'
 export const HeaderProfile = ({ data }) => {
     return (
         <>
