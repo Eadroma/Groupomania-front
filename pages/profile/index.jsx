@@ -6,7 +6,7 @@ import {
 import { NavbarModule } from "../../components/Navbar/Navbar";
 import { HeaderModule } from "../../components/Header";
 import { FooterModule } from "../../components/Footer/Footer";
-import { HeaderProfile } from "../../components/profileHeaderader";
+import { HeaderProfile } from "../../components/profile/profileHeader";
 import styles from "./Profile.module.css";
 import { useEffect, useState } from "react";
 import { BsReplyFill, BsHeartFill } from "react-icons/bs";
